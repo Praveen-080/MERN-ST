@@ -18,6 +18,33 @@ How to run (locally):
   2. Backend:
      cd server
      npm install
+     npm start
+  3. Frontend:
+     cd client
+     npm install
+     npm run dev
+
+Deployment:
+  1. Backend (deploy to Heroku/Railway/Render/etc.):
+     - Set environment variables: MONGO_URI (MongoDB connection string)
+     - Deploy the server/ directory
+  2. Frontend (Netlify):
+     - Connect GitHub repo to Netlify
+     - Build settings:
+       - Base directory: client
+       - Build command: npm run build
+       - Publish directory: client/dist
+     - Environment variables:
+       - VITE_API_URL: Your deployed backend URL (e.g., https://your-backend.herokuapp.com)
+     - Deploy
+
+Features:
+  - Product management
+  - Billing/checkout
+  - Dashboard with stats
+  - Reports
+  - Sales history
+  - Real-time low stock notifications (Socket.io)
      copy .env.example to .env and set MONGO_URI
      npm run start
   3. Frontend:
